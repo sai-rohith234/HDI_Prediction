@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HDI Result | HDI Prediction System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="result-page">
+  <header class="site-header compact"><a class="brand" href="{{ url_for('home') }}"><span class="brand-mark">HD</span> HDI Predictor</a><a class="back-link" href="{{ url_for('home') }}">← Home</a></header>
+  <main class="result-layout">
+    <section class="result-card">
+      <p class="eyebrow">Prediction complete</p><h1>{{ country }}</h1><p class="result-caption">Estimated Human Development Index</p>
+      <div class="score-circle" aria-label="Predicted HDI score {{ '%.3f'|format(prediction) }}"><span>{{ '%.3f'|format(prediction) }}</span><small>out of 1.000</small></div>
+      <p class="interpretation">{% if prediction >= 0.8 %}This estimate falls in the high human development range.{% elif prediction >= 0.55 %}This estimate falls in the medium human development range.{% else %}This estimate falls in the lower human development range.{% endif %}</p>
+      <a class="primary-button" href="{{ url_for('predict') }}">Make another prediction <span aria-hidden="true">→</span></a>
+    </section>
+    <aside class="input-summary"><h2>Submitted indicators</h2><dl>{% for label, value in inputs.items() %}<div><dt>{{ label }}</dt><dd>{% if label == 'Gross National Income per Capita' %}${{ '{:,.0f}'.format(value) }}{% else %}{{ '%.1f'|format(value) }} years{% endif %}</dd></div>{% endfor %}</dl><p>This is a model estimate for educational use, not an official UNDP calculation.</p></aside>
+  </main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+Country,Development Group,Life Expectancy,Mean Years of Schooling,Expected Years of Schooling,Gross National Income per Capita,HDI
+Norway,Very High,83.2,13.0,18.2,68000,0.966
+Switzerland,Very High,84.0,13.9,16.7,69700,0.967
+Ireland,Very High,82.9,13.7,18.9,81800,0.950
+Germany,Very High,81.1,14.1,17.0,55000,0.950
+Australia,Very High,84.5,12.7,21.1,49200,0.946
+Iceland,Very High,82.7,13.8,19.2,57300,0.959
+Sweden,Very High,83.0,12.7,19.1,58400,0.952
+Singapore,Very High,84.1,11.9,16.6,90900,0.949
+Netherlands,Very High,82.3,12.6,18.7,57400,0.946
+Canada,Very High,82.6,13.9,16.4,47800,0.935
+Japan,Very High,84.7,12.7,15.2,42600,0.925
+South Korea,Very High,83.7,12.5,16.5,44500,0.929
+United States,Very High,79.5,13.7,16.5,73600,0.927
+United Kingdom,Very High,80.7,13.3,17.6,46600,0.940
+France,Very High,82.5,11.6,16.3,47000,0.910
+Spain,Very High,83.2,10.6,17.8,42700,0.911
+Italy,Very High,82.7,10.7,16.2,44300,0.906
+Poland,Very High,77.7,12.3,16.9,34600,0.881
+Chile,Very High,80.0,11.3,16.9,28300,0.860
+Argentina,Very High,76.1,11.1,18.0,22000,0.849
+Russia,Very High,73.2,12.6,15.8,27300,0.822
+Malaysia,High,76.3,10.4,13.3,25500,0.807
+Thailand,High,78.7,8.7,15.9,17700,0.803
+China,High,78.2,8.0,15.2,23100,0.788
+Brazil,High,75.8,8.3,15.4,15400,0.760
+Mexico,High,75.1,9.2,14.9,20800,0.781
+Indonesia,High,71.7,8.6,13.7,12400,0.713
+South Africa,High,62.3,11.6,13.7,13300,0.717
+India,Medium,67.2,6.7,12.6,6950,0.644
+Bangladesh,Medium,72.4,7.4,12.4,6800,0.670
+Vietnam,High,74.6,8.4,15.0,10800,0.726
+Philippines,Medium,69.3,9.4,13.1,9920,0.710
+Egypt,High,70.2,9.8,13.1,12000,0.728
+Morocco,Medium,74.0,6.2,14.2,7480,0.683
+Kenya,Medium,62.8,7.4,11.8,4730,0.601
+Ghana,Medium,64.1,7.2,12.1,5740,0.632
+Nigeria,Low,54.7,7.2,10.0,5250,0.548
+Ethiopia,Low,65.0,3.9,8.8,2460,0.492
+Pakistan,Low,66.1,4.5,8.7,5380,0.540
+Nepal,Medium,70.5,5.1,13.2,4110,0.601
+Uganda,Low,62.7,6.1,11.5,2280,0.550
+Rwanda,Low,67.1,4.4,11.1,2350,0.548
+Tanzania,Low,66.2,6.4,9.7,2870,0.532
+Zambia,Medium,61.2,7.1,10.7,3600,0.569
+Niger,Low,61.6,2.1,7.0,1240,0.400
+Chad,Low,53.6,2.3,8.0,1680,0.394
+Central African Republic,Low,54.5,4.3,8.0,950,0.387

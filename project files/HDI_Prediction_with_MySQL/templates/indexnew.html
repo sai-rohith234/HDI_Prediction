@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predict HDI | HDI Prediction System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="form-page">
+  <header class="site-header compact"><a class="brand" href="{{ url_for('home') }}"><span class="brand-mark">HD</span> HDI Predictor</a><a class="back-link" href="{{ url_for('home') }}">← Home</a></header>
+  <main class="form-layout">
+    <section class="form-intro"><p class="eyebrow">Prediction workspace</p><h1>Estimate a country’s HDI score.</h1><p>Enter a set of development indicators. Values are checked against reasonable input ranges before the model runs.</p><div class="input-note"><strong>What is HDI?</strong><span>A composite score from 0 to 1. Higher values indicate higher human development.</span></div></section>
+    <section class="prediction-panel" aria-labelledby="prediction-heading">
+      <h2 id="prediction-heading">Development indicators</h2><p class="panel-subtitle">All fields are required.</p>
+      {% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}{% for category, message in messages %}<div class="alert {{ category }}" role="alert">{{ message }}</div>{% endfor %}{% endif %}{% endwith %}
+      <form action="{{ url_for('predict') }}" method="post" novalidate>
+        <div class="field full"><label for="country">Country or region</label><input id="country" name="country" type="text" maxlength="80" value="{{ request.form.get('country', '') }}" placeholder="e.g., India" required></div>
+        <div class="field"><label for="life_expectancy">Life expectancy <small>years</small></label><input id="life_expectancy" name="life_expectancy" type="number" min="{{ limits['Life Expectancy'][0] }}" max="{{ limits['Life Expectancy'][1] }}" step="0.1" value="{{ request.form.get('life_expectancy', '') }}" placeholder="e.g., 72.4" required></div>
+        <div class="field"><label for="mean_years_of_schooling">Mean years of schooling <small>years</small></label><input id="mean_years_of_schooling" name="mean_years_of_schooling" type="number" min="{{ limits['Mean Years of Schooling'][0] }}" max="{{ limits['Mean Years of Schooling'][1] }}" step="0.1" value="{{ request.form.get('mean_years_of_schooling', '') }}" placeholder="e.g., 8.6" required></div>
+        <div class="field"><label for="expected_years_of_schooling">Expected years of schooling <small>years</small></label><input id="expected_years_of_schooling" name="expected_years_of_schooling" type="number" min="{{ limits['Expected Years of Schooling'][0] }}" max="{{ limits['Expected Years of Schooling'][1] }}" step="0.1" value="{{ request.form.get('expected_years_of_schooling', '') }}" placeholder="e.g., 13.7" required></div>
+        <div class="field"><label for="gross_national_income_per_capita">GNI per capita <small>USD (PPP)</small></label><input id="gross_national_income_per_capita" name="gross_national_income_per_capita" type="number" min="{{ limits['Gross National Income per Capita'][0] }}" max="{{ limits['Gross National Income per Capita'][1] }}" step="1" value="{{ request.form.get('gross_national_income_per_capita', '') }}" placeholder="e.g., 12400" required></div>
+        <button class="primary-button submit-button" type="submit">Calculate HDI estimate <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

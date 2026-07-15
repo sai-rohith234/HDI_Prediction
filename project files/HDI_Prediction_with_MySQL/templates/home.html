@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Predict Human Development Index scores from education, health, and income indicators.">
+  <title>HDI Prediction System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('home') }}"><span class="brand-mark">HD</span> HDI Predictor</a>
+    <nav aria-label="Main navigation"><a href="#about">About</a><a href="#method">Method</a><a class="nav-button" href="{{ url_for('predict') }}">Predict HDI</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Human Development Index</p>
+        <h1>See the indicators behind human progress.</h1>
+        <p class="hero-text">Use a trained linear regression model to estimate an HDI score from life expectancy, education, and national income indicators.</p>
+        <div class="hero-actions"><a class="primary-button" href="{{ url_for('predict') }}">Estimate an HDI score <span aria-hidden="true">→</span></a><a class="text-link" href="#method">How it works</a></div>
+      </div>
+      <div class="hero-visual" aria-label="Illustration of the three HDI dimensions: health, education, and income">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="hdi-card main-score"><span>HDI</span><strong>0.814</strong><small>estimated score</small></div>
+        <div class="hdi-card health"><span class="metric-icon">+</span><div><strong>Health</strong><small>life expectancy</small></div></div>
+        <div class="hdi-card education"><span class="metric-icon">✦</span><div><strong>Education</strong><small>years of schooling</small></div></div>
+        <div class="hdi-card income"><span class="metric-icon">↗</span><div><strong>Income</strong><small>GNI per capita</small></div></div>
+      </div>
+    </section>
+
+    <section class="dimension-section" id="about">
+      <p class="eyebrow">The model inputs</p><h2>Development is multidimensional.</h2>
+      <div class="dimension-grid">
+        <article><span class="number">01</span><h3>Healthy lives</h3><p>Life expectancy represents the opportunity to lead a long and healthy life.</p></article>
+        <article><span class="number">02</span><h3>Knowledge</h3><p>Mean and expected years of schooling capture present and future educational access.</p></article>
+        <article><span class="number">03</span><h3>Living standards</h3><p>Gross national income per capita is used as an income proxy for living standards.</p></article>
+      </div>
+    </section>
+
+    <section class="method-section" id="method">
+      <div><p class="eyebrow">Clear &amp; reproducible</p><h2>A practical learning project, from data to prediction.</h2></div>
+      <ol><li><span>1</span>Data is cleaned and explored</li><li><span>2</span>A linear regression model is trained</li><li><span>3</span>Your inputs generate an HDI estimate</li></ol>
+    </section>
+  </main>
+  <footer><span>HDI Prediction System</span><span>Built with Flask &amp; scikit-learn</span></footer>
+</body>
+</html>
